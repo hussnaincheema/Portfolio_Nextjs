@@ -2,15 +2,17 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Section from "@/components/Section";
+import Background from "@/components/Background";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-zinc-50 dark:bg-black font-sans selection:bg-blue-100 dark:selection:bg-blue-900/30">
+    <main className="min-h-screen bg-transparent font-sans selection:bg-blue-100 dark:selection:bg-blue-900/30 overflow-x-hidden relative">
+      <Background />
       <Navbar />
       <Hero />
       <About />
 
-      <Section id="skills" title="Skills" className="bg-zinc-50 dark:bg-[#0a0a0a]">
+      <Section id="skills" title="Skills" className="bg-transparent">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {["React", "Next.js", "TypeScript", "Node.js", "TailwindCSS", "PostgreSQL", "Docker", "AWS"].map((skill) => (
             <div key={skill} className="p-6 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 text-center font-medium shadow-sm transition-transform hover:scale-105">
@@ -20,7 +22,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="services" title="Services" className="bg-white dark:bg-black">
+      <Section id="services" title="Services" className="bg-transparent">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             { title: "Web Development", desc: "Building responsive and performant web applications using modern frameworks." },
@@ -35,7 +37,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="projects" title="Projects" className="bg-zinc-50 dark:bg-[#0a0a0a]">
+      <Section id="projects" title="Projects" className="bg-transparent">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {[1, 2, 3, 4].map((i) => (
             <div key={i} className="group relative overflow-hidden rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-lg transition-all hover:-translate-y-2">
@@ -49,7 +51,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="testimonials" title="Testimonials" className="bg-white dark:bg-black">
+      <Section id="testimonials" title="Testimonials" className="bg-transparent">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
             { name: "John Doe", role: "CEO at TechCorp", content: "Hussnain is an exceptional engineer who delivers high-quality work consistently." },
@@ -66,7 +68,7 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section id="contact" title="Contact Me" className="bg-zinc-50 dark:bg-[#0a0a0a]">
+      <Section id="contact" title="Contact Me" className="bg-transparent">
         <div className="max-w-2xl mx-auto bg-white dark:bg-zinc-900 p-10 rounded-3xl border border-zinc-200 dark:border-zinc-800 shadow-xl">
           <form className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -82,7 +84,7 @@ export default function Home() {
       </Section>
 
       <footer className="py-12 border-t border-zinc-200 dark:border-zinc-800 text-center text-zinc-500 dark:text-zinc-400">
-        <p>&copy; {new Date().getFullYear()} Hussnain Cheema. All rights reserved.</p>
+        <p suppressHydrationWarning>&copy; {new Date().getFullYear()} Hussnain Cheema. All rights reserved.</p>
       </footer>
     </main>
   );

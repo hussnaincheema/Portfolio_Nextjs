@@ -13,25 +13,22 @@ const About = () => {
                 viewport={{ once: true }}
                 className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12"
             >
-                {/* Left side - Image and Buttons */}
+                {/* Left side - Image */}
                 <div className="w-full md:w-1/2 flex flex-col items-center relative">
-                    {/* Decorative circle - Fixed positioning to not get cut off */}
+                    {/* Decorative circle */}
                     <div className="absolute -top-10 -left-10 w-40 h-40 bg-purple-200/30 dark:bg-purple-500/10 rounded-full blur-3xl -z-10"></div>
-                    
-                    {/* Image container with proper sizing and no cutoff */}
-                    <div className="relative w-72 h-72 md:w-[400px] md:h-[400px] rounded-3xl overflow-visible">
-                        {/* Main image background with proper containment */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 rounded-3xl">
-                            <div className="relative w-full h-full flex items-center justify-center">
-                                <Image
-                                    src="/assets/images/hussnain.png"
-                                    alt="Hussnain Cheema"
-                                    width={400}
-                                    height={400}
-                                    className="object-containe"
-                                    priority
-                                />
-                            </div>
+
+                    {/* Image container - Circular */}
+                    <div className="relative w-72 h-72 md:w-[450px] md:h-[450px] rounded-3xl p-2 border-2 border-zinc-200 dark:border-zinc-800 shadow-2xl transition-transform hover:scale-105 duration-500">
+                        <div className="relative w-full h-full rounded-3xl overflow-hidden bg-white dark:bg-zinc-900 flex items-center justify-center">
+                            <Image
+                                src="/assets/images/hussnain.png"
+                                alt="Hussnain Cheema"
+                                className="object-contain"
+                                width={400}
+                                height={400}
+                                priority
+                            />
                         </div>
                     </div>
                 </div>
@@ -42,10 +39,10 @@ const About = () => {
                         About Me
                     </h2>
                     <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-                        I am a results-driven Software Engineer with a passion for building scalable, high-performance applications. With expertise in modern web technologies, I focus on creating seamless user experiences and robust backend systems.
+                        I’m a <span className="text-black dark:text-white font-semibold">React Native Developer</span> with 1.5+ years of experience, specializing in creating scalable, user-friendly, and efficient mobile applications. My focus is on delivering high-quality solutions by crafting reusable components, optimizing performance, and implementing clean code architecture.
                     </p>
-                    <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-                        My approach combines technical excellence with a deep understanding of user needs, ensuring every project I work on delivers real value. I'm always looking for new challenges and opportunities to push the boundaries of what's possible in software development.
+                    <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6 italic border-l-4 border-blue-500 pl-4">
+                        If you’re looking for a dedicated developer who can turn your ideas into reality, you’re in the right place!
                     </p>
                 </div>
             </motion.div>

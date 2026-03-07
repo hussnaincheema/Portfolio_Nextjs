@@ -15,18 +15,20 @@ const About = () => {
             >
                 {/* Left side - Image */}
                 <div className="w-full md:w-1/2 flex flex-col items-center relative">
-                    {/* Decorative circle */}
-                    <div className="absolute -top-10 -left-10 w-40 h-40 bg-purple-200/30 dark:bg-purple-500/10 rounded-full blur-3xl -z-10"></div>
+                    {/* Image container - Redesigned with Green Accent */}
+                    <div className="relative w-72 h-72 md:w-[450px] md:h-[450px] group transition-transform hover:scale-105 duration-500">
+                        {/* Decorative Green Background - Offset L-Shape effect */}
+                        <div className="absolute -bottom-6 -left-6 w-1/2 h-full bg-blue-500 rounded-3xl -z-10 transition-transform group-hover:-translate-x-2 group-hover:translate-y-2 duration-500"></div>
+                        <div className="absolute -bottom-6 -left-6 w-full h-1/2 bg-blue-500 rounded-3xl -z-10 transition-transform group-hover:-translate-x-2 group-hover:translate-y-2 duration-500"></div>
 
-                    {/* Image container - Circular */}
-                    <div className="relative w-72 h-72 md:w-[450px] md:h-[450px] rounded-3xl p-2 border-2 border-zinc-200 dark:border-zinc-800 shadow-2xl transition-transform hover:scale-105 duration-500">
-                        <div className="relative w-full h-full rounded-3xl overflow-hidden bg-white dark:bg-zinc-900 flex items-center justify-center">
+                        {/* Main Image Container */}
+                        <div className="relative w-full h-full rounded-[40px] overflow-hidden bg-black flex items-center justify-end border-2 border-zinc-800 shadow-2xl">
                             <Image
                                 src="/assets/images/hussnainProfile.png"
                                 alt="Hussnain Cheema"
                                 className="object-contain"
-                                width={400}
-                                height={400}
+                                width={450}
+                                height={450}
                                 priority
                             />
                         </div>

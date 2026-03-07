@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const About = () => {
     return (
-        <section id="about" className="min-h-screen py-24 px-8 md:px-20 bg-transparent overflow-hidden">
+        <section id="about" className="pt-30 pb-35 px-8 md:px-20 bg-transparent overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +39,10 @@ const About = () => {
                         About Me
                     </h2>
                     <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
-                        I’m a <span className="text-black dark:text-white font-semibold">React Native Developer</span> with 1.5+ years of experience, specializing in creating scalable, user-friendly, and efficient mobile applications. My focus is on delivering high-quality solutions by crafting reusable components, optimizing performance, and implementing clean code architecture.
+                        I am an accomplished <span className="text-black dark:text-white font-semibold">Full Stack Developer</span> specializing in <span className="text-black dark:text-white font-semibold">React Native</span>, <span className="text-black dark:text-white font-semibold">React.js</span>, and <span className="text-black dark:text-white font-semibold">Next.js</span>. With a strong expertise in both <span className="text-black dark:text-white font-semibold">Mobile and Web Development</span>, I craft scalable, high-performance applications that deliver seamless user experiences.
+                    </p>
+                    <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+                        My proficiency extends across the entire stack, from building robust backends with <span className="text-black dark:text-white font-semibold">Node.js</span> and <span className="text-black dark:text-white font-semibold">MongoDB</span> to integrating complex <span className="text-black dark:text-white font-semibold">API Services</span> and <span className="text-black dark:text-white font-semibold">Native Device Features</span>. I am dedicated to delivering high-quality, <span className="text-black dark:text-white font-semibold">production-ready solutions</span> through clean code architecture and end-to-end <span className="text-black dark:text-white font-semibold">App Deployment</span> excellence.
                     </p>
                     <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6 italic border-l-4 border-blue-500 pl-4">
                         If you’re looking for a dedicated developer who can turn your ideas into reality, you’re in the right place!

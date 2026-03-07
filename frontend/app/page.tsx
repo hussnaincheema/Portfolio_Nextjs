@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Skills from "@/components/Skills";
 import Section from "@/components/Section";
 import Background from "@/components/Background";
 
@@ -11,16 +12,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
-
-      <Section id="skills" title="Skills" className="bg-transparent">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {["React", "Next.js", "TypeScript", "Node.js", "TailwindCSS", "PostgreSQL", "Docker", "AWS"].map((skill) => (
-            <div key={skill} className="p-6 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 text-center font-medium shadow-sm transition-transform hover:scale-105">
-              {skill}
-            </div>
-          ))}
-        </div>
-      </Section>
+      <Skills />
 
       <Section id="services" title="Services" className="bg-transparent">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

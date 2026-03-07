@@ -22,7 +22,7 @@ const About = () => {
                     <div className="relative w-72 h-72 md:w-[450px] md:h-[450px] rounded-3xl p-2 border-2 border-zinc-200 dark:border-zinc-800 shadow-2xl transition-transform hover:scale-105 duration-500">
                         <div className="relative w-full h-full rounded-3xl overflow-hidden bg-white dark:bg-zinc-900 flex items-center justify-center">
                             <Image
-                                src="/assets/images/hussnain.png"
+                                src="/assets/images/hussnainProfile.png"
                                 alt="Hussnain Cheema"
                                 className="object-contain"
                                 width={400}

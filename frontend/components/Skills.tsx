@@ -28,6 +28,7 @@ const Skills = () => {
         "Bug Fixing & Troubleshooting",
         "Responsive UI Design",
         "Animations",
+        "Push Notifications",
     ];
 
     const containerVariants = {

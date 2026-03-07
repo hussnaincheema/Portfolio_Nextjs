@@ -1,53 +1,43 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import * as THREE from "three";
+// @ts-ignore
+import NET from "vanta/dist/vanta.net.min";
 
 const Background = () => {
+    const vantaRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        let vantaEffect: any = null;
+        if (vantaRef.current) {
+            vantaEffect = NET({
+                el: vantaRef.current,
+                THREE: THREE,
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0x2563eb, // blue-600
+                backgroundColor: 0x0, // black
+                points: 10.00,
+                maxDistance: 20.00,
+                spacing: 18.00,
+                showDots: true
+            });
+        }
+        return () => {
+            if (vantaEffect) vantaEffect.destroy();
+        };
+    }, []);
+
     return (
-        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-zinc-50 dark:bg-black">
-            {/* Floating Blobs */}
-            <motion.div
-                animate={{
-                    x: [0, 40, -20, 0],
-                    y: [0, -30, 20, 0],
-                    scale: [1, 1.1, 0.9, 1],
-                }}
-                transition={{
-                    duration: 15,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-                className="absolute top-[10%] left-[15%] w-[35vw] h-[35vw] bg-blue-400/10 dark:bg-blue-600/5 blur-[80px] rounded-full"
-            />
-
-            <motion.div
-                animate={{
-                    x: [0, -50, 30, 0],
-                    y: [0, 40, -30, 0],
-                    scale: [1, 0.9, 1.1, 1],
-                }}
-                transition={{
-                    duration: 18,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-                className="absolute bottom-[20%] right-[10%] w-[40vw] h-[40vw] bg-purple-400/10 dark:bg-purple-600/5 blur-[100px] rounded-full"
-            />
-
-            <motion.div
-                animate={{
-                    x: [0, 30, -40, 0],
-                    y: [0, 20, 50, 0],
-                    opacity: [0.3, 0.5, 0.3],
-                }}
-                transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
-                className="absolute top-[40%] right-[20%] w-[25vw] h-[25vw] bg-pink-400/10 dark:bg-pink-600/5 blur-[90px] rounded-full"
-            />
-        </div>
+        <div
+            ref={vantaRef}
+            className="fixed inset-0 -z-10 overflow-hidden pointer-events-none bg-black opacity-30"
+        />
     );
 };
 

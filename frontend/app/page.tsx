@@ -11,6 +11,7 @@ import Testimonials from "@/components/Testimonials";
 import Section from "@/components/Section";
 import Background from "@/components/Background";
 import { Mail, Phone, MapPin, Send, AlertCircle, ChevronRight } from "lucide-react";
+import toast from "react-hot-toast";
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -36,16 +37,33 @@ export default function Home() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitting(true);
-      // Simulate API call
-      setTimeout(() => {
-        alert("Message sent successfully!");
-        setFormData({ name: "", email: "", mobile: "", subject: "", message: "" });
+      try {
+        const response = await fetch("http://localhost:5001/api/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          toast.success("Message sent successfully!");
+          setFormData({ name: "", email: "", mobile: "", subject: "", message: "" });
+        } else {
+          toast.error(result.message || "Failed to send message. Please try again later.");
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        toast.error("An error occurred. Please check your connection and try again.");
+      } finally {
         setIsSubmitting(false);
-      }, 1500);
+      }
     }
   };
 

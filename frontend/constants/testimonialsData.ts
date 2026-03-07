@@ -21,7 +21,7 @@ export const testimonials: Testimonial[] = [
         name: "Muhammad Afaq",
         role: "Team Member",
         date: "March 7, 2025",
-        text: "I had the pleasure of working with Husnain, and he is an excellent React Native developer. He is highly skilled, dedicated, and pays attention to every detail in his work. He consistently delivers projects on time and handles issues efficiently. I'm truly impressed with his professionalism and technical expertise.",
+        text: "I had the pleasure of working with Hussnain, and he is an excellent React Native developer. He is highly skilled, dedicated, and pays attention to every detail in his work. He consistently delivers projects on time and handles issues efficiently. I'm truly impressed with his professionalism and technical expertise.",
         image: "https://media.licdn.com/dms/image/v2/D4D35AQFuIVPeICeBSg/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1732828246532?e=1773478800&v=beta&t=iE_w5riWzfpFQQBBrKGPjp_Lgqfz5qcaAqGlWFDpU4U"
     },
     {

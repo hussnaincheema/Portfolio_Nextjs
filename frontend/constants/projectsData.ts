@@ -135,7 +135,7 @@ export const projects: Project[] = [
             "Settings and profile",
             "Fully responsive"
         ],
-        role: "Full Stack Developer",
+        role: "Frontend Developer",
         tools: ["Recharts", "Lucide Icons", "Axios", "React Router", "Postman", "GitHub"],
         techStack: ["React.js", "Tailwind CSS", "JavaScript"],
         images: [
@@ -165,7 +165,7 @@ export const projects: Project[] = [
             "User authentication",
             "State management with Redux"
         ],
-        role: "Full Stack Developer",
+        role: "Frontend Developer",
         tools: ["React Router", "Axios", "Formik", "Yup", "Postman", "GitHub"],
         techStack: ["React.js", "Redux", "Tailwind CSS", "JavaScript"],
         images: [

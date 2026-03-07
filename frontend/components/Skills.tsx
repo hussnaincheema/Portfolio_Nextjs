@@ -56,7 +56,7 @@ const Skills = () => {
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
-                        Technical Expertise
+                        Technical <span className="text-zinc-400">Expertise</span>
                     </h2>
                     <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto">
                         Divided into core technology stack and professional specializations.

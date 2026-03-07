@@ -7,6 +7,7 @@ import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Services from "../components/Services";
 import Projects from "@/components/Projects";
+import Testimonials from "@/components/Testimonials";
 import Section from "@/components/Section";
 import Background from "@/components/Background";
 import { Mail, Phone, MapPin, Send, AlertCircle, ChevronRight } from "lucide-react";
@@ -59,22 +60,7 @@ export default function Home() {
 
       <Projects />
 
-      <Section id="testimonials" title="Testimonials" className="bg-transparent">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {[
-            { name: "John Doe", role: "CEO at TechCorp", content: "Hussnain is an exceptional engineer who delivers high-quality work consistently." },
-            { name: "Jane Smith", role: "Product Manager", content: "Working with Hussnain was a pleasure. He really understands the user's perspective." }
-          ].map((t) => (
-            <div key={t.name} className="p-8 bg-zinc-50 dark:bg-[#0a0a0a] rounded-2xl border border-zinc-200 dark:border-zinc-800 italic">
-              <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6">"{t.content}"</p>
-              <div className="not-italic">
-                <p className="font-bold text-black dark:text-white">{t.name}</p>
-                <p className="text-sm text-zinc-500">{t.role}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
+      <Testimonials />
 
       <Section id="contact" title="Contact Me" className="bg-transparent">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-16">

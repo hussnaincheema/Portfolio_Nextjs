@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const About = () => {
     return (
-        <section id="about" className="min-h-screen py-24 px-8 md:px-20 bg-transparent overflow-hidden">
+        <section id="about" className="min-h-screen py-20 px-8 md:px-20 bg-transparent overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}

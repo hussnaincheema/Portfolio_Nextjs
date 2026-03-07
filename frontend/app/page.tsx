@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -10,9 +10,28 @@ import Projects from "@/components/Projects";
 import Testimonials from "@/components/Testimonials";
 import Section from "@/components/Section";
 import Background from "@/components/Background";
-import { Mail, Phone, MapPin, Send, AlertCircle, ChevronRight } from "lucide-react";
+import { Mail, Phone, MapPin, Send, AlertCircle, ArrowUp } from "lucide-react";
+import toast from "react-hot-toast";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -36,16 +55,33 @@ export default function Home() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
       setIsSubmitting(true);
-      // Simulate API call
-      setTimeout(() => {
-        alert("Message sent successfully!");
-        setFormData({ name: "", email: "", mobile: "", subject: "", message: "" });
+      try {
+        const response = await fetch("http://localhost:5001/api/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          toast.success("Message sent successfully!");
+          setFormData({ name: "", email: "", mobile: "", subject: "", message: "" });
+        } else {
+          toast.error(result.message || "Failed to send message. Please try again later.");
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        toast.error("An error occurred. Please check your connection and try again.");
+      } finally {
         setIsSubmitting(false);
-      }, 1500);
+      }
     }
   };
 
@@ -57,9 +93,7 @@ export default function Home() {
       <About />
       <Skills />
       <Services />
-
       <Projects />
-
       <Testimonials />
 
       <Section id="contact" title="Contact Me" className="bg-transparent">
@@ -92,7 +126,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-1">Call Me</p>
-                  <a href="tel:+923216447958" className="text-lg font-semibold text-black dark:text-white hover:text-green-600 transition-colors">
+                  <a href="https://wa.me/923216447958" target="_blank" rel="noopener noreferrer" className="text-lg font-semibold text-black dark:text-white hover:text-green-600 transition-colors">
                     +92 321 6447958
                   </a>
                 </div>
@@ -222,6 +256,22 @@ export default function Home() {
           <p className="text-zinc-500 dark:text-zinc-400" suppressHydrationWarning>&copy; {new Date().getFullYear()} Hussnain Cheema. All rights reserved.</p>
         </div>
       </footer>
+      <AnimatePresence>
+        {showScrollTop && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.5, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.5, y: 50 }}
+            onClick={scrollToTop}
+            className="fixed bottom-10 right-10 z-[100] w-14 h-14 text-white rounded-2xl"
+            whileHover={{ y: -5 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <ArrowUp className="w-7 h-7 group-hover:scale-110 transition-transform" />
+          </motion.button>
+
+        )}
+      </AnimatePresence>
     </main>
   );
 }

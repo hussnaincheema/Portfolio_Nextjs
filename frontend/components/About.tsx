@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const About = () => {
     return (
-        <section id="about" className="min-h-screen py-24 px-8 md:px-20 bg-white dark:bg-black">
+        <section id="about" className="min-h-screen py-24 px-8 md:px-20 bg-transparent overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -13,31 +13,30 @@ const About = () => {
                 viewport={{ once: true }}
                 className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12"
             >
-                <div className="w-full md:w-1/2 flex flex-col items-center">
-                    <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-2xl transition-transform hover:scale-105 duration-500">
-                        <Image
-                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop"
-                            alt="Hussnain Cheema"
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
-                    <div className="mt-8 flex gap-4 w-full justify-center">
-                        <a
-                            href="#contact"
-                            className="px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-full font-semibold hover:opacity-80 transition-opacity"
-                        >
-                            Get in Touch
-                        </a>
-                        <a
-                            href="/cv.pdf"
-                            download
-                            className="px-6 py-3 border border-black dark:border-white text-black dark:text-white rounded-full font-semibold hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
-                        >
-                            Download CV
-                        </a>
+                {/* Left side - Image and Buttons */}
+                <div className="w-full md:w-1/2 flex flex-col items-center relative">
+                    {/* Decorative circle - Fixed positioning to not get cut off */}
+                    <div className="absolute -top-10 -left-10 w-40 h-40 bg-purple-200/30 dark:bg-purple-500/10 rounded-full blur-3xl -z-10"></div>
+                    
+                    {/* Image container with proper sizing and no cutoff */}
+                    <div className="relative w-72 h-72 md:w-[400px] md:h-[400px] rounded-3xl overflow-visible">
+                        {/* Main image background with proper containment */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 rounded-3xl">
+                            <div className="relative w-full h-full flex items-center justify-center">
+                                <Image
+                                    src="/assets/images/hussnain.png"
+                                    alt="Hussnain Cheema"
+                                    width={400}
+                                    height={400}
+                                    className="object-containe"
+                                    priority
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                {/* Right side - Text Content */}
                 <div className="w-full md:w-1/2">
                     <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black dark:text-white">
                         About Me

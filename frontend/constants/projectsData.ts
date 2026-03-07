@@ -38,9 +38,9 @@ export const projects: Project[] = [
             "User Freindly UI.",
             "Cross Platform (Android and IOS)."
         ],
-        role: "Lead Developer",
-        tools: ["React Native", "Redux", "Node.js", "PDF Custom Generator", "Local Notifications", "Advanced Filters"],
-        techStack: ["React Native", "JavaScript", "Redux", "Context API"],
+        role: "React Native Developer",
+        tools: ["React Navigation", "Context API", "PDF Custom Generator", "Local Notifications", "Advanced Filters", "Postman", "GitHub", "VS Code"],
+        techStack: ["React Native", "JavaScript", "TypeScript"],
         images: [
             "/assets/images/mobileapp/invoiceme/1.png",
             "/assets/images/mobileapp/invoiceme/2.png",
@@ -65,9 +65,9 @@ export const projects: Project[] = [
             "Data input for growth tracking",
             "Parental support features"
         ],
-        role: "Full Stack Developer",
-        tools: ["React Native", "Firebase", "State Management"],
-        techStack: ["React Native", "Firebase", "JavaScript"],
+        role: "React Native Developer",
+        tools: ["Redux", "React Navigation", "Firebase", "State Management", "Postman", "GitHub"],
+        techStack: ["React Native", "Node.js", "Express.js", "MongoDB", "JavaScript"],
         images: ["/assets/images/mobileapp/baby/home.jpeg"],
         links: {
             android: "https://play.google.com/store/apps/details?id=com.baby_care"
@@ -87,8 +87,8 @@ export const projects: Project[] = [
             "Always-on support"
         ],
         role: "React Native Developer",
-        tools: ["React Native", "Video Streaming", "Authentication"],
-        techStack: ["React Native", "Node.js", "Express.js"],
+        tools: ["Redux", "Video Streaming", "Authentication (JWT)", "Postman", "GitHub"],
+        techStack: ["React Native", "Node.js", "Express.js", "MongoDB", "JavaScript"],
         images: ["/assets/images/mobileapp/plumm/home.jpeg"],
         links: {
             ios: "https://apps.apple.com/in/app/plumm/id1604618955",
@@ -108,9 +108,9 @@ export const projects: Project[] = [
             "Real-time location sharing",
             "Safety tips and resources"
         ],
-        role: "Lead Developer",
-        tools: ["React Native", "SMS Integration", "GPS Services"],
-        techStack: ["React Native", "JavaScript", "Native Modules"],
+        role: "React Native Developer",
+        tools: ["React Navigation", "Redux", "GPS Services", "SMS Integration", "Postman", "GitHub"],
+        techStack: ["React Native", "JavaScript", "Redux"],
         images: [
             "/assets/images/mobileapp/womensafety/1.jpeg",
             "/assets/images/mobileapp/womensafety/2.jpeg",
@@ -136,8 +136,8 @@ export const projects: Project[] = [
             "Fully responsive"
         ],
         role: "Full Stack Developer",
-        tools: ["React.js", "Tailwind CSS", "Recharts", "Lucide Icons"],
-        techStack: ["React JS", "Tailwind CSS", "JavaScript"],
+        tools: ["Recharts", "Lucide Icons", "Axios", "React Router", "Postman", "GitHub"],
+        techStack: ["React.js", "Tailwind CSS", "JavaScript"],
         images: [
             "/assets/images/webapp/dashboard/1.jpeg",
             "/assets/images/webapp/dashboard/2.jpeg",
@@ -166,7 +166,7 @@ export const projects: Project[] = [
             "State management with Redux"
         ],
         role: "Full Stack Developer",
-        tools: ["React.js", "Redux", "Tailwind CSS", "Axios"],
+        tools: ["React Router", "Axios", "Formik", "Yup", "Postman", "GitHub"],
         techStack: ["React.js", "Redux", "Tailwind CSS", "JavaScript"],
         images: [
             "/assets/images/webapp/eshop/1.jpeg",

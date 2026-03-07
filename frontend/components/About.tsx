@@ -35,8 +35,8 @@ const About = () => {
 
                 {/* Right side - Text Content */}
                 <div className="w-full md:w-1/2">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-black dark:text-white">
-                        About Me
+                    <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
+                        About <span className="text-zinc-400">Me</span>
                     </h2>
                     <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
                         I am an accomplished <span className="text-black dark:text-white font-semibold">Full Stack Developer</span> specializing in <span className="text-black dark:text-white font-semibold">React Native</span>, <span className="text-black dark:text-white font-semibold">React.js</span>, and <span className="text-black dark:text-white font-semibold">Next.js</span>. With a strong expertise in both <span className="text-black dark:text-white font-semibold">Mobile and Web Development</span>, I craft scalable, high-performance applications that deliver seamless user experiences.

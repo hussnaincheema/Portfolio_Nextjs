@@ -36,7 +36,7 @@ app.post('/api/send-email', (req, res) => {
         subject: `Contact Form: ${subject}`,
         html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; border: 1px solid #ddd; padding: 20px; border-radius: 10px;">
-            <h2 style="color: #2563eb; border-bottom: 2px solid #2563eb; padding-bottom: 10px;">New Contact Form Message</h2>
+            <h2 style="color: #2563eb; border-bottom: 2px solid #2563eb; padding-bottom: 10px;">Message From ${name}</h2>
 
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
@@ -44,9 +44,8 @@ app.post('/api/send-email', (req, res) => {
             <p><strong>Subject:</strong> ${subject}</p>
 
             <div style="margin-top: 20px; padding: 15px; background: #f9f9f9; border-left: 4px solid #2563eb; border-radius: 5px;">
-                <p><strong>Message:</strong></p>
-                <p>${message}</p>
-            </div>
+    ${message.split('\n').map(line => `<p>${line}</p>`).join('')}
+</div>
 
             <p style="font-size: 12px; color: #777; margin-top: 30px; text-align: center; border-top: 1px solid #eee; padding-top: 20px;">
                 This message was sent from your Portfolio Website Contact Form.

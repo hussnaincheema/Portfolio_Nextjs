@@ -21,6 +21,32 @@ const Navbar = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
 
+    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        setIsMobileMenuOpen(false); // Close mobile menu when a link is clicked
+        
+        const targetId = href.replace("#", "");
+        const elem = document.getElementById(targetId);
+        if (elem) {
+            // Adjust offset so the fixed navbar doesn't cover the section title
+            const offset = 80;
+            const elementPosition = elem.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.scrollY - offset;
+            
+            // Adding a tiny timeout allows the mobile menu close animation to start before the heavy scroll animation 
+            setTimeout(() => {
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+                setActive(targetId);
+            }, 50);
+        } else {
+            // Fallback just in case
+            window.location.hash = href;
+        }
+    };
+
     return (
         <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md px-8 py-4 border-b border-zinc-200 dark:border-zinc-800">
             <div className="flex flex-col md:flex-row justify-between items-center w-full">
@@ -48,7 +74,8 @@ const Navbar = () => {
                         <li key={link.name}>
                             <a
                                 href={link.href}
-                                className="text-sm font-medium text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors"
+                                onClick={(e) => handleScroll(e, link.href)}
+                                className="text-sm font-medium text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors cursor-pointer"
                             >
                                 {link.name}
                             </a>
@@ -72,8 +99,8 @@ const Navbar = () => {
                                 <li key={link.name}>
                                     <a
                                         href={link.href}
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                        className="block text-lg font-bold text-zinc-600 hover:text-blue-500 dark:text-zinc-400 dark:hover:text-blue-400 transition-colors"
+                                        onClick={(e) => handleScroll(e, link.href)}
+                                        className="block text-lg font-bold text-zinc-600 hover:text-blue-500 dark:text-zinc-400 dark:hover:text-blue-400 transition-colors cursor-pointer"
                                     >
                                         {link.name}
                                     </a>

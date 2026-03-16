@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
     const [active, setActive] = useState("home");
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navLinks = [
         { name: "About Me", href: "#about" },
@@ -15,28 +17,72 @@ const Navbar = () => {
         { name: "Contact Me", href: "#contact" },
     ];
 
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md px-8 py-4 flex justify-between items-center border-b border-zinc-200 dark:border-zinc-800">
-            <div className="flex flex-col">
-                <h1 className="text-xl font-bold text-black dark:text-white leading-tight">
-                    Hussnain Cheema
-                </h1>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium">
-                    Software Engineer
-                </p>
+        <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md px-8 py-4 border-b border-zinc-200 dark:border-zinc-800">
+            <div className="flex flex-col md:flex-row justify-between items-center w-full">
+                <div className="flex justify-between items-center w-full md:w-auto">
+                    <div className="flex flex-col">
+                        <h1 className="text-xl font-bold text-black dark:text-white leading-tight">
+                            Hussnain Cheema
+                        </h1>
+                        <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium">
+                            Software Engineer
+                        </p>
+                    </div>
+                    {/* Hamburger Button */}
+                    <button 
+                        className="md:hidden p-2 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+                        onClick={toggleMobileMenu}
+                    >
+                        {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                    </button>
+                </div>
+
+                {/* Desktop Menu */}
+                <ul className="hidden md:flex gap-8">
+                    {navLinks.map((link) => (
+                        <li key={link.name}>
+                            <a
+                                href={link.href}
+                                className="text-sm font-medium text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors"
+                            >
+                                {link.name}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
             </div>
-            <ul className="hidden md:flex gap-8">
-                {navLinks.map((link) => (
-                    <li key={link.name}>
-                        <a
-                            href={link.href}
-                            className="text-sm font-medium text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors"
-                        >
-                            {link.name}
-                        </a>
-                    </li>
-                ))}
-            </ul>
+
+            {/* Mobile Dropdown Menu */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="md:hidden overflow-hidden mt-4 border-t border-zinc-200 dark:border-zinc-800"
+                    >
+                        <ul className="flex flex-col gap-4 pt-4 pb-2">
+                            {navLinks.map((link) => (
+                                <li key={link.name}>
+                                    <a
+                                        href={link.href}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className="block text-lg font-bold text-zinc-600 hover:text-blue-500 dark:text-zinc-400 dark:hover:text-blue-400 transition-colors"
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };

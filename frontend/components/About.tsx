@@ -24,7 +24,7 @@ const About = () => {
                         {/* Main Image Container */}
                         <div className="relative w-full h-full rounded-[40px] overflow-hidden bg-black flex items-center justify-end border-2 border-zinc-800 shadow-2xl">
                             <Image
-                                src="/assets/images/hussnainProfile.png"
+                                src="/assets/images/hussnainProfile.jpg"
                                 alt="Hussnain Cheema"
                                 className="object-contain"
                                 width={450}

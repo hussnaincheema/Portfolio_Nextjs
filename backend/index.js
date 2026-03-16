@@ -36,7 +36,7 @@ app.post('/api/send-email', (req, res) => {
         subject: `Contact Form: ${subject}`,
         html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; border: 1px solid #ddd; padding: 20px; border-radius: 10px;">
-            <h2 style="color: #2563eb; border-bottom: 2px solid #2563eb; padding-bottom: 10px;">Message From ${name}</h2>
+            <h2 style="background-color: #2563eb; color: #ffffff; padding: 15px; border-radius: 5px; margin-top: 0; text-align: center; font-size: 24px;">Message From ${name}</h2>
 
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>

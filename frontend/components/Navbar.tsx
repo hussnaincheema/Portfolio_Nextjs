@@ -47,20 +47,20 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-black/80 backdrop-blur-md px-8 py-4 border-b border-zinc-200 dark:border-zinc-800">
+        <nav className="fixed top-0 left-0 w-full z-50 dark:bg-white/80 bg-black/80 backdrop-blur-md px-8 py-4 border-b dark:border-zinc-200 border-zinc-800">
             <div className="flex flex-col md:flex-row justify-between items-center w-full">
                 <div className="flex justify-between items-center w-full md:w-auto">
                     <div className="flex flex-col">
-                        <h1 className="text-xl font-bold text-black dark:text-white leading-tight">
+                        <h1 className="text-xl font-bold dark:text-black text-white leading-tight">
                             Hussnain Cheema
                         </h1>
-                        <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium">
+                        <p className="text-sm dark:text-zinc-500 text-zinc-400 font-medium">
                             Software Engineer
                         </p>
                     </div>
                     {/* Hamburger Button */}
                     <button 
-                        className="md:hidden p-2 text-zinc-600 dark:text-zinc-400 hover:text-black dark:hover:text-white transition-colors"
+                        className="md:hidden p-2 dark:text-zinc-600 text-zinc-400 dark:hover:text-black hover:text-white transition-colors"
                         onClick={toggleMobileMenu}
                     >
                         {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -74,7 +74,7 @@ const Navbar = () => {
                             <a
                                 href={link.href}
                                 onClick={(e) => handleScroll(e, link.href)}
-                                className="text-sm font-medium text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white transition-colors cursor-pointer"
+                                className="text-sm font-medium dark:text-zinc-600 dark:hover:text-black text-zinc-400 hover:text-white transition-colors cursor-pointer"
                             >
                                 {link.name}
                             </a>

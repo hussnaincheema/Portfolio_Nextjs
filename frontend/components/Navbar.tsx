@@ -9,12 +9,12 @@ const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navLinks = [
-        { name: "About Me", href: "#about" },
-        { name: "Skills", href: "#skills" },
-        { name: "Services", href: "#services" },
-        { name: "Projects", href: "#projects" },
-        { name: "Testimonials", href: "#testimonials" },
-        { name: "Contact Me", href: "#contact" },
+        { name: "About Me", href: "/#about" },
+        { name: "Skills", href: "/#skills" },
+        { name: "Services", href: "/#services" },
+        { name: "Projects", href: "/#projects" },
+        { name: "Testimonials", href: "/#testimonials" },
+        { name: "Contact Me", href: "/#contact" },
     ];
 
     const toggleMobileMenu = () => {
@@ -22,18 +22,17 @@ const Navbar = () => {
     };
 
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-        e.preventDefault();
-        setIsMobileMenuOpen(false); // Close mobile menu when a link is clicked
-        
-        const targetId = href.replace("#", "");
+        const targetId = href.startsWith("/") ? href.split("#")[1] : href.replace("#", "");
         const elem = document.getElementById(targetId);
+        
         if (elem) {
-            // Adjust offset so the fixed navbar doesn't cover the section title
+            e.preventDefault();
+            setIsMobileMenuOpen(false); 
+            
             const offset = 80;
             const elementPosition = elem.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.scrollY - offset;
             
-            // Adding a tiny timeout allows the mobile menu close animation to start before the heavy scroll animation 
             setTimeout(() => {
                 window.scrollTo({
                     top: offsetPosition,
@@ -42,8 +41,8 @@ const Navbar = () => {
                 setActive(targetId);
             }, 50);
         } else {
-            // Fallback just in case
-            window.location.hash = href;
+            // Let the browser handle navigation to the other page
+            setIsMobileMenuOpen(false);
         }
     };
 

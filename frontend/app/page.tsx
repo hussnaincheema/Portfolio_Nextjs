@@ -18,8 +18,6 @@ export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
     };

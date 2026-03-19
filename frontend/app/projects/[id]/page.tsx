@@ -155,7 +155,7 @@ export default function ProjectDetail() {
                     className="mb-24"
                 >
                     <div className="flex items-center justify-between mb-8">
-                        <h2 className="text-3xl font-bold">Project <span className="text-zinc-400">Gallery</span></h2>
+                        <h2 className="text-3xl font-bold">Project <span className="text-zinc-500 dark:text-zinc-400">Gallery</span></h2>
                         <p className="text-sm text-zinc-400 italic">Scroll horizontally to view more</p>
                     </div>
                     <div className="flex gap-6 overflow-x-auto pb-10 snap-x snap-mandatory no-scrollbar cursor-grab active:cursor-grabbing">
@@ -182,7 +182,7 @@ export default function ProjectDetail() {
                     viewport={{ once: true }}
                     className="max-w-4xl"
                 >
-                    <h2 className="text-4xl font-bold mb-12">Key <span className="text-zinc-400">Features</span></h2>
+                    <h2 className="text-4xl font-bold mb-12">Key <span className="text-zinc-500 dark:text-zinc-400">Features</span></h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {project.features.map((feature, idx) => (
                             <div key={idx} className="flex gap-4 group">

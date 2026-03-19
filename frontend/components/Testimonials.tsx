@@ -30,7 +30,7 @@ const Testimonials = () => {
                     <div className="flex items-center gap-4">
                         <MessageSquare className="w-8 h-8 md:w-10 md:h-10 text-blue-500" />
                         <h3 className="text-3xl md:text-5xl font-bold text-black dark:text-white">
-                            What <span className="text-zinc-400">People Say</span>
+                            What <span className="text-zinc-500 dark:text-zinc-400">People Say</span>
                         </h3>
                     </div>
                     <div className="flex gap-2 items-center text-zinc-400 group cursor-pointer">

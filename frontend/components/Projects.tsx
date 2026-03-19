@@ -95,7 +95,7 @@ const Projects = () => {
                         viewport={{ once: true }}
                     >
                         <h2 className="text-4xl md:text-5xl font-bold text-black dark:text-white mb-4">
-                            Featured <span className="text-zinc-400">Projects</span>
+                            Featured <span className="text-zinc-500 dark:text-zinc-400">Projects</span>
                         </h2>
                         <p className="text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto">
                             A selected collection of my professional work in mobile and web development.

@@ -111,7 +111,7 @@ export default function Home() {
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-1">Email Me</p>
+                  <p className="text-sm font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-1">Email Me</p>
                   <a href="mailto:cheemahussnain155@gmail.com" className="text-lg font-semibold text-black dark:text-white hover:text-blue-600 transition-colors">
                     cheemahussnain155@gmail.com
                   </a>
@@ -123,7 +123,7 @@ export default function Home() {
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-1">Call Me</p>
+                  <p className="text-sm font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-1">Call Me</p>
                   <a href="https://wa.me/923216447958" target="_blank" rel="noopener noreferrer" className="text-lg font-semibold text-black dark:text-white hover:text-green-600 transition-colors">
                     +92 321 6447958
                   </a>
@@ -135,7 +135,7 @@ export default function Home() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest mb-1">My Location</p>
+                  <p className="text-sm font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-widest mb-1">My Location</p>
                   <p className="text-lg font-semibold text-black dark:text-white">
                     Lahore, Punjab, Pakistan
                   </p>

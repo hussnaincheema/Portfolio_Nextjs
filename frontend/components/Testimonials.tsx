@@ -3,7 +3,6 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Quote, ChevronRight, MessageSquare } from "lucide-react";
-import Image from "next/image";
 import { testimonials, Testimonial } from "@/constants/testimonialsData";
 import Section from "./Section";
 
@@ -58,20 +57,9 @@ const Testimonials = () => {
                             <div className="relative z-10 h-full flex flex-col">
                                 {/* Author Info at Top */}
                                 <div className="flex items-center gap-4 mb-6">
-                                    {testimonial.image ? (
-                                        <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-blue-500/20 relative shadow-lg">
-                                            <Image
-                                                src={testimonial.image}
-                                                alt={testimonial.name}
-                                                fill
-                                                className="object-cover"
-                                            />
-                                        </div>
-                                    ) : (
-                                        <div className="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 font-bold text-2xl border-2 border-blue-500/20 shadow-lg">
-                                            {testimonial.name.charAt(0)}
-                                        </div>
-                                    )}
+                                    <div className="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 font-bold text-2xl border-2 border-blue-500/20 shadow-lg">
+                                        {testimonial.name.charAt(0).toUpperCase()}
+                                    </div>
                                     <div>
                                         <h4 className="text-lg font-bold text-black dark:text-white uppercase tracking-tight">{testimonial.name}</h4>
                                         <p className="text-sm text-zinc-500 dark:text-zinc-500 font-medium line-clamp-1">{testimonial.role}</p>

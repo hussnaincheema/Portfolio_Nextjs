@@ -84,7 +84,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-black/78 font-sans selection:bg-blue-100 dark:selection:bg-blue-900/30 overflow-x-hidden relative">
+    <main className="min-h-screen bg-transparent font-sans selection:bg-blue-100 dark:selection:bg-blue-900/30 overflow-x-hidden relative">
       <Background />
       <Navbar />
       <Hero />

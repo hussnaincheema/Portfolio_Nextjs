@@ -14,9 +14,9 @@ const About = () => {
                 className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12"
             >
                 {/* Mobile Title - Only visible on small screens to ensure it's at the very top */}
-                <h2 className="text-4xl font-bold text-black dark:text-white mb-2 text-center md:hidden w-full order-1">
-                    About <span className="text-zinc-400">Me</span>
-                </h2>
+                    <h2 className="text-4xl font-bold text-black dark:text-white mb-2 text-center md:hidden w-full order-1">
+                        About <span className="text-zinc-500 dark:text-zinc-400">Me</span>
+                    </h2>
 
                 {/* Left side - Image */}
                 <div className="w-full md:w-1/2 flex flex-col items-center relative order-2 md:order-1">
@@ -44,7 +44,7 @@ const About = () => {
                 <div className="w-full md:w-1/2 flex flex-col order-3 md:order-2">
                     {/* Desktop Title - Hidden on mobile, visible on medium+ screens */}
                     <h2 className="hidden md:block text-5xl font-bold text-black dark:text-white mb-4 text-left">
-                        About <span className="text-zinc-400">Me</span>
+                        About <span className="text-zinc-500 dark:text-zinc-400">Me</span>
                     </h2>
                      
                     <div className="mt-8 md:mt-0">

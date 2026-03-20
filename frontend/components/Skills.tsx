@@ -1,15 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Cpu, Globe, Layout, Smartphone, Zap, Database, Github, Terminal, Layers } from "lucide-react";
+import { Code2, Cpu, Globe, Layout, Smartphone, Zap, Database, Github, Terminal, Hexagon, Server, Leaf, Network } from "lucide-react";
 
 const Skills = () => {
     const technicalSkills = [
         { name: "JavaScript", icon: <Code2 className="w-5 h-5 text-yellow-500" /> },
+        { name: "TypeScript", icon: <Terminal className="w-5 h-5 text-blue-600" /> },
         { name: "React js", icon: <Globe className="w-5 h-5 text-blue-500" /> },
         { name: "React Native (CLI, Expo)", icon: <Smartphone className="w-5 h-5 text-cyan-500" /> },
-        { name: "TypeScript", icon: <Terminal className="w-5 h-5 text-blue-600" /> },
-        { name: "MERN Stack", icon: <Layers className="w-5 h-5 text-green-600" /> },
+        { name: "Node Js", icon: <Hexagon className="w-5 h-5 text-green-600" /> },
+        { name: "Express Js", icon: <Server className="w-5 h-5 text-zinc-500 dark:text-zinc-400" /> },
+        { name: "MongoDB", icon: <Leaf className="w-5 h-5 text-emerald-500" /> },
+        { name: "Socket.io", icon: <Network className="w-5 h-5 text-zinc-900 dark:text-white" /> },
         { name: "Firebase", icon: <Zap className="w-5 h-5 text-orange-500" /> },
         { name: "Supabase", icon: <Database className="w-5 h-5 text-emerald-500" /> },
         { name: "Redux", icon: <Cpu className="w-5 h-5 text-purple-500" /> },

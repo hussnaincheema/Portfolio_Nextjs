@@ -8,12 +8,12 @@ import { ChevronRight } from "lucide-react";
 const Services = () => {
     const servicesData = [
         {
-            title: "Web Development",
-            desc: "As an accomplished Full Stack Web Developer, I specialize in React.js, Next.js, Node.js, and MongoDB. My skill set covers both front-end and back-end technologies, allowing me to build dynamic, responsive, and scalable web applications. I focus on creating seamless user experiences while ensuring efficient data handling and robust server-side functionality. Every project I work on is driven by a commitment to delivering innovative, high-quality solutions that truly meet client and user needs."
-        },
-        {
             title: "App Development",
             desc: "I am a skilled Full Stack App Developer specializing in React Native, Node.js, Express.js, and MongoDB. With over two years of experience, I build high-performance mobile applications that are both intuitive and responsive. From designing smooth user interfaces to managing backend logic and database integration, I handle the entire development process. My goal is to deliver mobile solutions that are reliable, scalable, and tailored to real-world user requirements."
+        },
+        {
+            title: "Web Development",
+            desc: "As an accomplished Full Stack Web Developer, I specialize in React.js, Next.js, Node.js, and MongoDB. My skill set covers both front-end and back-end technologies, allowing me to build dynamic, responsive, and scalable web applications. I focus on creating seamless user experiences while ensuring efficient data handling and robust server-side functionality. Every project I work on is driven by a commitment to delivering innovative, high-quality solutions that truly meet client and user needs."
         },
         {
             title: "API Integration Services",

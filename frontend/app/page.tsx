@@ -12,10 +12,32 @@ import Section from "@/components/Section";
 import Background from "@/components/Background";
 import { Mail, Phone, MapPin, Send, AlertCircle, ArrowUp } from "lucide-react";
 import toast from "react-hot-toast";
+import SplashScreen from "@/components/SplashScreen";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    // Hide splash screen after 4.5 seconds
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 4500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    if (showSplash) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [showSplash]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -84,8 +106,17 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-transparent font-sans selection:bg-blue-100 dark:selection:bg-blue-900/30 overflow-x-hidden relative">
-      <Background />
+    <>
+      <AnimatePresence>
+        {showSplash && <SplashScreen />}
+      </AnimatePresence>
+      <motion.main 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: showSplash ? 0 : 1 }}
+        transition={{ duration: 0.8, ease: "easeIn" }}
+        className="min-h-screen bg-transparent font-sans selection:bg-blue-100 dark:selection:bg-blue-900/30 overflow-x-hidden relative"
+      >
+        <Background />
       <Navbar />
       <Hero />
       <About />
@@ -270,6 +301,7 @@ export default function Home() {
 
         )}
       </AnimatePresence>
-    </main>
+      </motion.main>
+    </>
   );
 }

@@ -48,7 +48,7 @@ export default function SplashScreen() {
                 </div>
 
                 {/* Welcome Text */}
-                <div className="text-center space-y-4">
+                <div className="text-center space-y-4 mt-12">
                     <motion.h1 
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}

@@ -9,6 +9,7 @@ const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navLinks = [
+        { name: "Home", href: "/#home" },
         { name: "About Me", href: "/#about" },
         { name: "Skills", href: "/#skills" },
         { name: "Services", href: "/#services" },

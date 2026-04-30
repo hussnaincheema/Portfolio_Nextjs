@@ -19,6 +19,28 @@ export interface Project {
 
 export const projects: Project[] = [
     {
+        id: "plumm",
+        title: "Plumm",
+        category: "Mobile App",
+        description: "Workplace mental health platform giving employees access to always-on support.",
+        fullDescription: "Plumm's workplace mental health platform gives employees access to always-on support from self-care soundscapes and meditations through to video coaching and therapy.",
+        features: [
+            "Self-care soundscapes",
+            "Meditations",
+            "Video coaching",
+            "Therapy access",
+            "Always-on support"
+        ],
+        role: "React Native Developer",
+        tools: ["Redux", "Video Streaming", "Authentication (JWT)", "Postman", "GitHub"],
+        techStack: ["React Native", "Node.js", "Express.js", "MongoDB", "JavaScript"],
+        images: ["/assets/images/mobileapp/plumm/home.jpeg"],
+        links: {
+            ios: "https://apps.apple.com/in/app/plumm/id1604618955",
+            android: "https://play.google.com/store/apps/details?id=com.plumm"
+        }
+    },
+    {
         id: "invoice-me",
         title: "Invoice Me",
         category: "Mobile App",
@@ -71,28 +93,6 @@ export const projects: Project[] = [
         images: ["/assets/images/mobileapp/baby/home.jpeg"],
         links: {
             android: "https://play.google.com/store/apps/details?id=com.baby_care"
-        }
-    },
-    {
-        id: "plumm",
-        title: "Plumm",
-        category: "Mobile App",
-        description: "Workplace mental health platform giving employees access to always-on support.",
-        fullDescription: "Plumm's workplace mental health platform gives employees access to always-on support from self-care soundscapes and meditations through to video coaching and therapy.",
-        features: [
-            "Self-care soundscapes",
-            "Meditations",
-            "Video coaching",
-            "Therapy access",
-            "Always-on support"
-        ],
-        role: "React Native Developer",
-        tools: ["Redux", "Video Streaming", "Authentication (JWT)", "Postman", "GitHub"],
-        techStack: ["React Native", "Node.js", "Express.js", "MongoDB", "JavaScript"],
-        images: ["/assets/images/mobileapp/plumm/home.jpeg"],
-        links: {
-            ios: "https://apps.apple.com/in/app/plumm/id1604618955",
-            android: "https://play.google.com/store/apps/details?id=com.plumm"
         }
     },
     {

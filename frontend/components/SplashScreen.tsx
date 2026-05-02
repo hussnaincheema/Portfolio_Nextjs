@@ -63,7 +63,7 @@ export default function SplashScreen() {
                         transition={{ delay: 1, duration: 0.8 }}
                         className="text-zinc-500 dark:text-zinc-400 text-lg uppercase tracking-widest"
                     >
-                        Loading Experience
+                        Loading Portfolio
                     </motion.p>
                     <motion.div 
                         initial={{ opacity: 0 }}

@@ -16,8 +16,9 @@ const Skills = () => {
         { name: "Firebase", icon: <Zap className="w-5 h-5 text-orange-500" /> },
         { name: "Supabase", icon: <Database className="w-5 h-5 text-emerald-500" /> },
         { name: "Redux", icon: <Cpu className="w-5 h-5 text-purple-500" /> },
-        { name: "Tailwind Css", icon: <Layout className="w-5 h-5 text-sky-400" /> },
+        { name: "Redux Toolkit", icon: <Cpu className="w-5 h-5 text-purple-500" /> },
         { name: "Context API", icon: <Code2 className="w-5 h-5 text-blue-400" /> },
+        { name: "Tailwind Css", icon: <Layout className="w-5 h-5 text-sky-400" /> },
         { name: "Git & GitHub", icon: <Github className="w-5 h-5 text-zinc-800 dark:text-zinc-200" /> },
     ];
 
@@ -25,6 +26,7 @@ const Skills = () => {
         "Android & iOS Deployment",
         "Reusable Components",
         "Performance Optimization",
+        "Native Code Implementation",
         "Problem Solving",
         "API Integration",
         "App Navigation (React Navigation/ Expo Router)",
